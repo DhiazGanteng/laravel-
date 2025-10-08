@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Student;
 use App\Models\Classroom;
 
 /**
@@ -10,6 +11,8 @@ use App\Models\Classroom;
  */
 class StudentFactory extends Factory
 {
+    protected $model = Student::class;
+
     /**
      * Define the model's default state.
      *
@@ -19,10 +22,10 @@ class StudentFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'date' => $this->faker->date('Y-m-d'), 
-            'classroom_id' => Classroom::factory(), // Assuming Classroom model exists
             'email' => $this->faker->unique()->safeEmail(),
-            'address' => $this->faker->address(),
+            'address' => $this->faker->city(),
+            'classroom_id'=> Classroom::factory(),
+            'birthday' => $this->faker->dateTimeBetween('2005-01-01', '2010-12-31')->format('Y-m-d'),
         ];
     }
 }

@@ -2,12 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Models\Subject;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Guardian>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Teacher>
  */
-class GuardianFactory extends Factory
+class TeacherFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,9 +19,10 @@ class GuardianFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'job' => $this->faker->randomElement(['Petani', 'Guru', 'Dokter', 'Karyawan', 'Wiraswasta']),
+            'subject_id' => Subject::factory(),
             'phone' => $this->faker->phoneNumber(),
             'email' => $this->faker->unique()->safeEmail(),
+            'address' => $this->faker->city(),
         ];
     }
 }

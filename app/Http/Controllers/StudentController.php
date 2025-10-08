@@ -1,21 +1,54 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Student;
 
+use App\Models\Student; 
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
+    
     public function index()
     {
-        $students = Student::all();
       
-    
-        return view('student',[
-            'title' => 'Student',
-            'students' => $students
+
+        $students = Student::all();
+        return view('student', [
+            'students' => $students,
+            'title' => 'Data Siswa'
         ]);
+    }
+
     
+    public function create()
+    {
+        
+    }
+
+  
+    public function store(Request $request)
+    {
+        
+    }
+
+    public function show(string $id)
+    {
+    }
+
+    public function edit(string $id)
+    {
+        
+    }
+
+   
+    public function update(Request $request, string $id)
+    {
+        
+    }
+
+ 
+    public function destroy(string $id)
+    {
+        
     }
 }
