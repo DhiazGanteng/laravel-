@@ -13,3 +13,4 @@ Route::get('/kontak', [KontakController::class, 'index'])->name('kontak');
 Route::get('/student', [StudentController::class, 'index'])->name('student');
 Route::get('/guardian', [GuardianController::class, 'index'])->name('guardian');
 Route::get('/classroom', [ClassroomController::class, 'index'])->name('classroom');
+
