@@ -14,3 +14,5 @@ Route::get('/student', [StudentController::class, 'index'])->name('student');
 Route::get('/guardian', [GuardianController::class, 'index'])->name('guardian');
 Route::get('/classroom', [ClassroomController::class, 'index'])->name('classroom');
 
+
+// Route::get('/student/create', [StudentController::class, 'create'])->name('student.create');
