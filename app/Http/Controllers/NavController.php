@@ -23,7 +23,7 @@ class NavController extends Controller
         $data = [
             'nama' => 'Dhiaz Alfiansyah',
             'kelas' => 'XI PPLG 1',
-            'sekolah' => 'SMK R'
+            'sekolah' => 'SMK RUS'
         ];
 
         return view('profil', $data, [

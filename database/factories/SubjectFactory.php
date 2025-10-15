@@ -17,8 +17,8 @@ class SubjectFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->unique()->randomElement(['MTK', 'Inggris', 'Bahasa Indonesia', 'Bahasa jawa', 'Bahasa jepang']),
-            'description' => fake()->unique()->randomElement(['Matematika', 'mapel inggriss', 'mapel bahasa indonesia', 'mapel bahasa jawa', 'mapel bahasa jepang']),
+            'name' => fake()->unique()->randomElement(['Mathematics', 'Science', 'History', 'Geography', 'English', 'Art', 'Physical Education']),
+            'description' => fake()->unique()->randomElement(['Basic concepts and principles', 'Scientific method and experimentation', 'Historical events and timelines', 'Physical features and human-environment interaction', 'Grammar, vocabulary, and literature', 'Techniques and styles of various art forms', 'Fitness, health, and sportsmanship']),
         ];
     }
 }

@@ -1,5 +1,5 @@
 <div>
-  <nav class="bg-gray-800/50">
+  <nav class="bg-gray-800">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
         <div class="flex items-center">
@@ -8,31 +8,17 @@
           </div>
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
-                    <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">Home</x-nav-link>
-                    <x-nav-link href="{{ route('kontak') }}" :active="request()->routeIs('kontak')">Kontak</x-nav-link>
-                    <x-nav-link href="{{ route('profil') }}" :active="request()->routeIs('profil')">Profil</x-nav-link>
-                    <x-nav-link href="{{ route('student') }}" :active="request()->routeIs('student')">Student</x-nav-link>
-                    <x-nav-link href="{{ route('guardian') }}" :active="request()->routeIs('guardian')">Guardian</x-nav-link>
-                    <x-nav-link href="{{ route('classroom') }}" :active="request()->routeIs('classroom')">Classrooms</x-nav-link>
-            </div>
-          </div>
-        </div>
-        
-        <div class="hidden md:block">
-          <div class="ml-4 flex items-center md:ml-6">
-            <el-dropdown class="relative ml-3">
-              <button class="relative flex max-w-xs items-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                <span class="absolute -inset-1.5"></span>
-                <span class="sr-only">Open user menu</span>
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="size-8 rounded-full outline -outline-offset-1 outline-white/10" />
-              </button>
 
-              <el-menu anchor="bottom end" popover class="w-48 origin-top-right rounded-md bg-gray-800 py-1 outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
-                <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:outline-hidden">Your profile</a>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:outline-hidden">Settings</a>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:outline-hidden">Sign out</a>
-              </el-menu>
-            </el-dropdown>
+              <x-navlink href="/home" :active="request()->is('home')">Home</x-navlink>
+              <x-navlink href="/profil" :active="request()->is('profil')">Profil</x-navlink>
+              <x-navlink href="/kontak" :active="request()->is('kontak')">Kontak</x-navlink>
+              <x-navlink href="/student" :active="request()->is('student')">Student</x-navlink>
+              <x-navlink href="/guardians" :active="request()->is('guardians')">guardians</x-navlink>
+              <x-navlink href="/classroom" :active="request()->is('classroom')">Classroom</x-navlink>
+              <x-navlink href="/teacher" :active="request()->is('teacher')">Teacher</x-navlink>
+              <x-navlink href="/subject" :active="request()->is('subject')">Subject</x-navlink>
+
+            </div>
           </div>
         </div>
       </div>

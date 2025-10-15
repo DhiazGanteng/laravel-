@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Subject;
+use Illuminate\Http\Request;
 
 class SubjectController extends Controller
 {
-    public function index()
+     public function index()
     {
-        $subjects = Subject::with('teacher')->get();
-        return view('subject', compact('subjects'));
+        $subjects = Subject::all();
+        return view('subjects', [
+            'subjects' => $subjects,
+            'title' => 'Subject Data'
+        ]);
     }
 }

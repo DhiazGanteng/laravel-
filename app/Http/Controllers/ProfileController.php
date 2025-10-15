@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 
 
-class ProfilController extends Controller
+class ProfileController extends Controller
 
 {
     

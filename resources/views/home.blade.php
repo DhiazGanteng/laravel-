@@ -1,4 +1,4 @@
-<x-layout >
-  <x-slot:judul>{{$title}}</x-slot:judul>
-   <h1>Selamat Datang di Halaman Home</h1>
+<x-layout>
+    <x-slot:title>Home</x-slot:title>
+    <h3 class="text-xl font-semibold text-gray-800">Ini adalah halaman home</h3>
 </x-layout>

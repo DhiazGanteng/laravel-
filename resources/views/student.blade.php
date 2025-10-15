@@ -1,34 +1,32 @@
 <x-layout>
-    <x-slot name="title">{{ $title }}</x-slot>
-    <div class="flex justify-center mt-3">
-        <div class="w-full max-w-6xl bg-white p-6 rounded-2xl shadow-lg">
-            <h2 class="text-2xl font-bold mb-6 text-center">Daftar Data Siswa</h2>
-            <div class="overflow-x-auto">
-                <table class="min-w-full border border-gray-200 table-auto">
-                    <thead class="bg-gray-800 text-white">
-                        <tr>
-                            <th class="px-4 py-2 text-left">No</th>
-                            <th class="px-4 py-2 text-left">Name</th>
-                            <th class="px-4 py-2 text-left">BirthDate</th>
-                            <th class="px-4 py-2 text-left">Email</th>
-                            <th class="px-4 py-2 text-left">Grade</th>
-                            <th class="px-4 py-2 text-left">Address</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($students as $student)
-                            <tr class="border-b">
-                                <td class="px-4 py-2 whitespace-nowrap">{{ $student->id}}</td>
-                                <td class="px-4 py-2 whitespace-nowrap">{{ $student->name }}</td>
-                                <td class="px-4 py-2 whitespace-nowrap">{{ $student->birthdate }}</td>
-                                <td class="px-4 py-2 whitespace-nowrap">{{ $student->email }}</td>
-                                <td class="px-4 py-2 whitespace-nowrap">{{ $student->classroom->name}}</td>
-                                <td class="px-4 py-2 whitespace-nowrap">{{ $student->address }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
+    <x-slot:title>{{ $title }} </x-slot:title>
+
+    <div class="w-full max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold mb-4 text-center">Daftar Siswa</h1>
+
+        <table class="w-full border border-gray-300 text-sm text-left">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="border px-4 py-2">No</th>
+                    <th class="border px-4 py-2">Name</th>
+                    <th class="border px-4 py-2">Email</th>
+                    <th class="border px-4 py-2">Address</th>
+                    <th class="border px-4 py-2">Class</th>
+                    <th class="border px-4 py-2">Birthday</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($students as $student)
+                <tr class = "odd:bg-white even:bg-gray-50 hover:bg-gray-100 transition">
+                    <td class="border px-6 py-4 font-medium text-gray-700">{{ $loop->iteration }}</td>
+                    <td class="border px-6 py-4">{{ $student->name}}</td>
+                    <td class="border px-6 py-4">{{ $student->email }}</td>
+                    <td class="border px-6 py-4">{{ $student->address }}</td>
+                    <td class="border px-6 py-4">{{ $student->classroom->name }}</td>
+                    <td class="border px-6 py-4">{{ $student['birthday'] }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 </x-layout>
